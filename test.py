@@ -35,11 +35,9 @@ def test_find_suitable_user():
         {"name": "Maria", "age": 18},
     ]
     # TODO найдите пользователя с именем "Olga"
-    suiable_user = None
     suiable_user = [i for i in users if i['name'] == 'Olga'][0]
     assert suiable_user == {"name": "Olga", "age": 45}
     # TODO найдите всех пользователей младше 20 лет
-    suiable_users = None
     suiable_users = [i for i in users if i['age'] < 20]
     assert suiable_users == [
         {"name": "Stanislav", "age": 15},
@@ -69,17 +67,14 @@ def test_readable_function():
     find_registration_button_on_login_page(page_url="https://companyname.com/login", button_text="Register")
 
 def open_browser(browser_name):
-    actual_result = None
     actual_result = get_readable_function_and_signature(open_browser.__name__, browser_name)
     assert actual_result == "Open Browser [Chrome]"
 
 def go_to_companyname_homepage(page_url):
-    actual_result = None
     actual_result = get_readable_function_and_signature(go_to_companyname_homepage.__name__, page_url)
     assert actual_result == "Go To Companyname Homepage [https://companyname.com]"
 
 def find_registration_button_on_login_page(page_url, button_text):
-    actual_result = None
     actual_result = get_readable_function_and_signature(find_registration_button_on_login_page.__name__, page_url, button_text)
     assert actual_result == "Find Registration Button On Login Page [https://companyname.com/login, Register]"
 
